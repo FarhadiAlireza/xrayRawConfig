@@ -7,15 +7,12 @@
     ],
     "tag": "api"
   },
+   "log": {
+    "loglevel": "warning"
+  },
   "dns": {
     "queryStrategy": "UseIPv4",
     "servers": [
-	  #Family Friend DNS
-      #"1.1.1.3",
-      #"1.0.0.3",
-      #"94.140.14.15",
-      #"94.140.15.16"
-	  
     ]
   },,
   "fakeDns": null,
@@ -32,9 +29,6 @@
       "tag": "api"
     }
   ],
-  "log": {
-    "loglevel": "warning"
-  },
   "outbounds": [
     {
       "protocol": "freedom",
@@ -78,43 +72,44 @@
       },
 	  {
         "ip": [
-          "geoip:private"
+          "geoip:private",
+	   "geoip:ir"
         ],
         "outboundTag": "blocked",
         "type": "field"
       },
       {
-        "ip": [
-          "geoip:ir",
-          "geoip:cn",
-          "geoip:ru"
-        ],
         "outboundTag": "blocked",
-        "type": "field"
-      },
-      {
         "domain": [
           "regexp:.*\\.ir$",
           "ext:iran.dat:ir",
           "ext:iran.dat:other",
-          "geosite:category-ir",
-          "geosite:cn",
-          "regexp:.*\\.cn$",
-          "geosite:category-gov-ru",
-          "regexp:.*\\.ru$"
+ 	  "ext:iran.dat:ads",
+	  "geosite:category-ads-all",
+          "geosite.dat",
+          "snapp",
+          "digikala",
+          "tapsi",
+          "blogfa",
+          "bank",
+          "sb24.com",
+          "sheypoor.com",
+          "tebyan.net",
+          "beytoote.com",
+          "telewebion.com",
+          "Film2movie.ws",
+          "Setare.com",
+          "Filimo.com",
+          "Torob.com",
+          "Tgju.org",
+          "Sarzamindownload.com",
+          "downloadha.com",
+          "P30download.com",
+          "Sanjesh.org"
         ],
-        "outboundTag": "blocked",
         "type": "field"
       },
-	  {
-        "domain": [
-          "geosite:category-ads-all",
-          "ext:iran.dat:ads"
-        ],
-        "outboundTag": "blocked",
-        "type": "field"
-      },
-	   {
+	{
         "domain": [
           "geosite:google",
           "geosite:netflix"
