@@ -14,7 +14,7 @@
     "queryStrategy": "UseIPv4",
     "servers": [
     ]
-  },,
+  },
   "fakeDns": null,
   "inbounds": [
     {
